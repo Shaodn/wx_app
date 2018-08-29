@@ -1,3 +1,6 @@
+project.config*
+#image
+image
 # Logs
 logs
 *.log

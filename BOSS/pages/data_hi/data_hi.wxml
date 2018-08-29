@@ -1,0 +1,7 @@
+<!--pages/data_hi/data_hi.wxml-->
+<!-- 
+  wx 2.2.3 版本存储自定义属性的方式为data-(任意)=value
+  获取方式
+      event.target.dataset 里面存储
+ -->
+<view id="tapTest" data-hello="东旭" oc="又胖了" data-hi="WeChat" bindtap="tapName"> Click me! </view>

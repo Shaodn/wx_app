@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/boss/boss",
+    "pages/PHP_content/PHP_content",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Boss直聘",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance":100
+  }
+}

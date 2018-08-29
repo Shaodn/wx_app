@@ -1,0 +1,50 @@
+<!--pages/PHP_content/PHP_content.wxml-->
+<scroll-view lower-threshold="100" bindscrolltolower="lowerCallback" class='wrap_'scroll-y="{{!scroll_bol}}" style='height:{{ scroll_height + "px"}}'>
+  <view class='all'>
+    <view class='top'>
+      <image src='../../image/home.png' class='home' bindtap='home'></image>
+      <input class='top_input' placeholder='搜索职位' value='{{value}}'></input>
+      <text class='search'>搜索</text>
+      <text class='top_city'>北京</text>
+      <image src='../../image/direction.png' class='direction'></image>
+    </view>
+
+    <view class='choose'>
+      <block wx:for="{{tip}}" wx:key="{{index}}">
+        <view class='choose_tip' bindtap='experience' data-content="{{item}}"  data-index="{{index}}">
+          {{item}}
+          <image src='../../image/direction.png' class='choose_direction' style='transform:{{index == ex_index ? "rotate(180deg)" : "rotate(360deg)"}}'></image>
+      </view>
+      </block>
+    </view>
+  <scroll-view wx:if="{{scroll_bol}}">
+    <view class='tip_content_wrap'>
+      <view wx:for="{{tip_content}}" wx:key="{{index}}">
+        <view class='experience'style='display:block'>
+          <view data-name="{{item}}" bindtap='filterData'>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='fixed_wrap' wx:if="{{scroll_bol}}" bindtap='fixed'></view>
+  <view class='view' wx:for="{{jsons.result}}" wx:key="{{key}}">
+    <view wx:if="{{item.ageLimit == filterName|| item.salary == filterName || item.educationBackground == filterName || filterName == ''}}">
+      <view class='content'>
+        <image class='content_img' src='//www.lgstatic.com/{{item.companyLogo}}'></image>
+        <view class='content_right'>
+          <view class='content_top'>
+            <text class='con_top_left'>{{item.positionName}}</text>
+            <text class='con_top_right'>{{item.salary}}</text>
+          </view>
+          <view class='company'>{{item.companyFullName}}</view>
+            <view class='content_bottom'>
+              <text class='address'>{{item.city}}</text>
+              <text class='time'>{{item.ageLimit}}</text>
+              <text class='education'>{{item.educationBackground}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
